@@ -33,7 +33,11 @@ import "../styles/app.scss";
           controller: "DirectusCMS"
         })
         .state('news', {
+<<<<<<< HEAD
           url: "/news/:nid/:title",
+=======
+          url: "/news/:id/:title",
+>>>>>>> origin/master
           template: newsSingle,
           controller: "DirectusCMS"
         })
@@ -49,6 +53,7 @@ import "../styles/app.scss";
       $scope.replaceTitle = function (string) {
         return string.replace(/ /g, "_").toLowerCase();
       }
+<<<<<<< HEAD
       $scope.formatDate = function (date) {
         var dateOut = new Date(date);
         return dateOut;
@@ -65,6 +70,29 @@ import "../styles/app.scss";
         );
       };
 
+=======
+
+      // Sending an item to the GraphCMS
+      $scope.sendItem = function (item) {
+        var missing = {};
+        if (item.title && item.body) {
+          $scope.directusCMSQuery('mutation { createNews(title:"' + item.title + '", body:"' + item.body + '") { id title body } }', 'newsCreated', 'createNews')
+        } else {
+          $scope.showAlert('You have to fill out all the fields', 'Error');
+        }
+      }
+      $scope.showAlert = function (message, type) {
+        $mdDialog.show(
+          $mdDialog.alert()
+          .parent(angular.element(document.querySelector('#popupContainer')))
+          .clickOutsideToClose(true)
+          .title(type)
+          .textContent(message)
+          .ariaLabel(type + ' dialog')
+          .ok('Got it!')
+        );
+      };
+>>>>>>> origin/master
       // Create a dynamic function for callbacks from GraphCMS
       $scope.directusCMSQuery = function (scopename, type, id) {
         getDirectusData.directusCMSQuery(type, id).then(
@@ -85,8 +113,13 @@ import "../styles/app.scss";
       $scope.directusCMSQuery('nyheter', 'Nyheter');
 
       // If there is a stateparameter called id, get specific news object
+<<<<<<< HEAD
       if ($stateParams.nid) {
         $scope.directusCMSQuery('nyhet', 'Nyheter', $stateParams.nid);
+=======
+      if ($stateParams.id) {
+        $scope.directusCMSQuery('nyhet', 'Nyheter', $stateParams.id);
+>>>>>>> origin/master
       }
     }])
     // Load our filters, services, controllers, etc..

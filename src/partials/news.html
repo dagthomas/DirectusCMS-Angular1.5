@@ -1,16 +1,28 @@
 <div layout="row" layout-align="center center">
+<<<<<<< HEAD
   <div flex-xs flex-gt-xs="50" flex-gt-md="75">
+=======
+  <div flex-xs flex-gt-xs="50">
+>>>>>>> origin/master
     <md-card>
       <md-card-title>
         <md-card-title-text>
           <span class="md-headline pointer" ui-sref="newslist()">< Back to list</span>
         </md-card-title-text>
       </md-card-title>
+<<<<<<< HEAD
       <img ng-src="{{'http://blog.theaxe.men/' + nyhet.Media.url}}" class="md-card-image" ng-if="nyhet.Media.url" >
       <md-card-title>
         <md-card-title-text>
           <span class="md-headline" ng-bind-html="nyhet.Tittel"></span>
           <span class="md-subhead" ng-bind-html="formatDate(nyhet.dato) | date : 'dd.MM.yyyy'"></span>
+=======
+      <img ng-src="{{'http://blog.theaxe.men/' + nyhet.Media.url}}" class="md-card-image" ng-if="nyhet.Media.url">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline" ng-bind-html="nyhet.Tittel"></span>
+          <span class="md-subhead" ng-bind-html="nyhet.createdAt | date : 'dd.MM.yyyy'"></span>
+>>>>>>> origin/master
         </md-card-title-text>
       </md-card-title>
       <md-card-content>
