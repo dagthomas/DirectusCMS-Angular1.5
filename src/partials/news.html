@@ -1,0 +1,22 @@
+<div layout="row" layout-align="center center">
+  <div flex-xs flex-gt-xs="50">
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline pointer" ui-sref="newslist()">< Back to list</span>
+        </md-card-title-text>
+      </md-card-title>
+      <img ng-src="{{'http://blog.theaxe.men/' + nyhet.Media.url}}" class="md-card-image" ng-if="nyhet.Media.url">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline" ng-bind-html="nyhet.Tittel"></span>
+          <span class="md-subhead" ng-bind-html="nyhet.createdAt | date : 'dd.MM.yyyy'"></span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <p ng-bind-html="nyhet.Tekst">
+        </p>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>
