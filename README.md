@@ -1,11 +1,8 @@
 **Info**
 
-* GraphCMS + Angular 1.5 Porject (ui router, angular material)
+* DirectusCMS + Angular 1.5 Porject (ui router, angular material)
 * Webpack 
 
-### Demo
-
-[Site demo](http://graphcms.dagthom.as)
 
 ### Requirements
 ```
@@ -14,7 +11,6 @@ $ npm install -g webpack
 $ npm install -g webpack-dev-server
 $ npm install -g eslint
 ```
-
 
 ### How to start
 
