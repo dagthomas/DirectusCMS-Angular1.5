@@ -6,11 +6,11 @@
     </md-toolbar>
     <md-content>
         <md-list>
-            <md-list-item class="md-3-line" ng-repeat="n in nyheter.rows | orderBy:'-id'" ui-sref="news({ id: n.id, title: replaceTitle(n.Tittel) })"
+            <md-list-item class="md-3-line" ng-repeat="n in nyheter.rows | orderBy:'-Dato'" ui-sref="news({ nid: n.id, title: replaceTitle(n.Tittel) })"
                 aria-label="Link to {{n.Tittel}}">
                 <div class="md-list-item-text">
                     <h3 ng-bind-html="n.Tittel"></h3>
-                    <p ng-bind-html="n.createdAt | date : 'dd.MM.yyyy'"></p>
+                    <p ng-bind-html="formatDate(n.dato) | date : 'dd.MM.yyyy'"></p>
                 </div>
                 <md-divider ng-if="!$last"></md-divider>
             </md-list-item>
