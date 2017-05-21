@@ -33,11 +33,7 @@ import "../styles/app.scss";
           controller: "DirectusCMS"
         })
         .state('news', {
-<<<<<<< HEAD
           url: "/news/:nid/:title",
-=======
-          url: "/news/:id/:title",
->>>>>>> origin/master
           template: newsSingle,
           controller: "DirectusCMS"
         })
@@ -53,7 +49,6 @@ import "../styles/app.scss";
       $scope.replaceTitle = function (string) {
         return string.replace(/ /g, "_").toLowerCase();
       }
-<<<<<<< HEAD
       $scope.formatDate = function (date) {
         var dateOut = new Date(date);
         return dateOut;
@@ -69,9 +64,6 @@ import "../styles/app.scss";
             .ok('Got it!')
         );
       };
-
-=======
-
       // Sending an item to the GraphCMS
       $scope.sendItem = function (item) {
         var missing = {};
@@ -92,7 +84,6 @@ import "../styles/app.scss";
           .ok('Got it!')
         );
       };
->>>>>>> origin/master
       // Create a dynamic function for callbacks from GraphCMS
       $scope.directusCMSQuery = function (scopename, type, id) {
         getDirectusData.directusCMSQuery(type, id).then(
@@ -113,13 +104,8 @@ import "../styles/app.scss";
       $scope.directusCMSQuery('nyheter', 'Nyheter');
 
       // If there is a stateparameter called id, get specific news object
-<<<<<<< HEAD
       if ($stateParams.nid) {
         $scope.directusCMSQuery('nyhet', 'Nyheter', $stateParams.nid);
-=======
-      if ($stateParams.id) {
-        $scope.directusCMSQuery('nyhet', 'Nyheter', $stateParams.id);
->>>>>>> origin/master
       }
     }])
     // Load our filters, services, controllers, etc..
